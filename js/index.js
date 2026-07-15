@@ -1,14 +1,31 @@
 const output = document.querySelector("#output");
 
-/* STEP 1: Create an object (looks a lot like declaring a variable, but with empty braces), then open this page in a browser and enter 'Coffee' in the console */
+/* STEP 1: Create an object (looks a lot like declaring a variable, but with empty braces), 
+then open this page in a browser and enter 'Coffee' in the console */
+function Coffee(size, isDecaf, qtyCream, qtySugar) {
+    this.size = size;
+    this.isDecaf = isDecaf;
+    this.qtyCream = qtyCream;
+    this.qtySugar = qtySugar;
+    this.decaf = this.isDecaf ? "decaffinated" : "caffinated";
+    this.description = function () {
+        // A small caffinated coffee with 1 cream and 2 sugar
+        return `A ${this.size} ${this.decaf} coffee with ${this.qtyCream} cream and ${this.qtySugar} sugar.`;
+    };
+}
 
 /* STEP 2: Instatiate a coffee based on the above constructor function */
+let priyanshCoffee = new Coffee("medium", false, 2, 1);
+output.textContent = priyanshCoffee.description();
 
 /* STEP 3: Refresh the page, and in the console, begin to call a method on priyanshCoffee by typing 'priyanshCoffee.' - look at all the members and methods */
 
-/* STEP 4: Enter into the console, priyanshCoffee.valueOf() and look at the result. priyanshCoffee doesn't have such a method, and neither does the constructor function, 'Coffee'. But the 'Object' object does - so through inheritance, priyanshCoffee has access to the method, valueOf(). */
+/* STEP 4: Enter into the console, priyanshCoffee.valueOf() and look at the result. 
+priyanshCoffee doesn't have such a method, and neither does the constructor function, 'Coffee'. But the 'Object' object does - so through inheritance, priyanshCoffee has access to the method, valueOf(). */
 
-/* STEP 5a: Each object has a prototype member that isn't really directly accessible, but it can be referenced using the deprecated '__proto__' - using a double underscore on either side of the word 'proto'. Try it - priyanshCoffee.__proto__.__proto__ */
+/* STEP 5a: Each object has a prototype member that isn't really directly accessible, 
+but it can be referenced using the deprecated '__proto__' - using a double underscore on either side of the word 'proto'. 
+Try it - priyanshCoffee.__proto__.__proto__ */
 
 /* STEP 5b: The more modern way to do this is … Object.getPrototypeOf(priyanshCoffee) - try THIS in the console */
 
