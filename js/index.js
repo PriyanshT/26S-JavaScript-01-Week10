@@ -32,12 +32,19 @@ Try it - priyanshCoffee.__proto__.__proto__ */
 /* STEP 5c: EVERYTHING is an object in JavaScript. Try accessing the prototype property of Coffee (which even though it is a constructor function it is still an object) with Coffee.prototype in the console. Then try Object.Prototype */
 
 /* STEP 6a: Let's circle back to create() - use priyanshCoffee to create a new object instance - one based on priyanshCoffee. */
+let robertCoffee = Object.create(priyanshCoffee);
+robertCoffee.size = "large";
+robertCoffee.isDecaf = true;
+robertCoffee.qtyCream = 1;
+robertCoffee.qtySugar = 1;
 
 /* STEP 6b: See how this new object inherits from the prototype with robertCoffee.__proto__ in the console. */
 
-/* STEP 7a: Each constructor function includes a prototype property with a value equal to an object that contains a constructor property. Try it out by typing priyanshCoffee.constructor and robertCoffee.constructor */
+/* STEP 7a: Each constructor function includes a prototype property with a value equal to an object that contains a constructor 
+property. Try it out by typing priyanshCoffee.constructor and robertCoffee.constructor */
 
 /* STEP 7b: Since constructor is also a function, you can use it to create a new object instance - try it! */
+let meganCoffee = new robertCoffee.constructor("small", false, 2, 3);
 
 /* STEP 7c: Attempt via the console to access the new object's properties - meganCoffee.size, meganCoffee.isDecaf, etc. */
 
