@@ -69,10 +69,23 @@ robertCoffee.serveIt();
 meganCoffee.serveIt();
 
 /* STEP 5: Define a subclass of the Coffee class */
+class Latte extends Coffee {
+    milkType;
+    constructor(size, isDecaf, milkType) {
+        super(size, isDecaf);
+        this.milkType = milkType;
+    }
+    latteDesc() {
+        return `A ${this.size} sized Latte with ${this.milkType} milk.`;
+    }
+}
 
 /* STEP 6: Create a new instance of the Latte object */
+let priyanshLatte = new Latte("large", false, "2%");
 
 /* STEP 7: Call up the latteDesc() method for the above created Latte instance */
+// priyanshLatte.latteDesc()
+// priyanshLatte.serveIt()
 
 /* STEP 8: Create yet another instance of Latte using the console, and try the latteDesc() method from the subclass, as well as the serveIt() method from the parent class */
 
